@@ -55,9 +55,23 @@ const viewLetter = async(req,res) => {
     }
 }
 
+const viewMyLetter = async(req,res) => {
+    try{
+        const {letterId} = req.params;
+
+        const pepe = await pepeModel.findOne({letterId : letterId})
+
+        res.status(200).json(pepe)
+    }
+    catch(error){
+        res.status(500).json({message: "Update failed", error})
+    }
+}
+
 module.exports = {
     createPepe,
     updateQuesAns,
+    viewMyLetter,
     viewLetter
 }
 

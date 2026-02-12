@@ -5,7 +5,7 @@ const app = express();
 const cors = require('cors');
 const IdentityRoute = require('./routers/identityRouter');
 const pepeRoute = require('./routers/pepeRouter');
-app.use(cors({origin : ['http://localhost:5173']}));
+app.use(cors({origin : ['http://localhost:5173','https://andikapepe.netlify.app']}));
 
 app.use(express.json());
 
